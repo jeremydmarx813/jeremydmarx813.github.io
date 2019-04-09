@@ -23,8 +23,19 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    const numCollect = [];
     
-    
+    if (start < end) {
+        for (let i = start; i < end + 1; i++){
+            numCollect.push(i);
+        }
+    } else if (start > end) {
+        for (let i = start; i > end - 1; i--) {
+            numCollect.push(i);
+        }
+    }
+   
+      return numCollect;  
     
     
     // YOUR CODE GOES ABOVE HERE //
