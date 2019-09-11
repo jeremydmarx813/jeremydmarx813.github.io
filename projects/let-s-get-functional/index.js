@@ -3,7 +3,7 @@
 'use strict';
 
 var customers = require('./data/customers.json');
-var _ = require(/* Replace this with the name of your lodown! */);
+var _ = require('lowdown-jeremydmarx813');
 
 /**
  * 1. Import your lodown module using the require() method,
@@ -16,11 +16,11 @@ var _ = require(/* Replace this with the name of your lodown! */);
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./projects/let-s-get-functional
+ *    npm start --prefix ./jeremydmarx813.github.io/projects/let-s-get-functional/
  */
 
 var maleCount = function(array) {
-
+    console.log(_);
 };
 
 var femaleCount;
