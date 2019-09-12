@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jeremy's First Website for Operation Spark</title>
+         <style>
+            body {
+                background: rgb(125, 198, 205);
+                color: rgb(45, 45, 45);
+                padding: 10px;
+                font-family: arial;
+            }
+            header {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+
+            /* navigation menu */
+            nav {
+                background: rgb(239, 80, 41);
+                margin: 0 auto;
+                margin-bottom: 20px;
+                display: flex;
+                padding: 10px;
+            }
+            nav header {
+                display: flex;
+                align-items: center;
+                color: rgb(255, 255, 255);
+                flex: 1;
+            }
+            nav ul {
+                list-style-image: none;
+            }
+            nav li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            nav a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            /* main container area beneath menu */
+            main {
+                background: rgb(245, 238, 219);
+                display: flex;
+            }
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .sidebar img {
+                width: 200px;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+            .interests header {
+                font-size: 1.25em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "all-contents">
+            <nav>
+                <header>Jeremy's First Website for Operation Spark</header>
+                <ul>
+                    <li><a href = "index.html">Home</a></li>
+                    <li><a href = "portfolio.html">Portfolio</a></li>
+                    <li><a href="studies.html">Studies</a></li>
+                </ul>
+            </nav>
+            
+            <main>
+              <div class = "sidebar">
+                  <img src = "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/55717508_1960387557422880_328024906006528000_o.jpg?_nc_cat=111&_nc_oc=AQmQKMyvbYOk8tFQtMo5TsTkF5N1ENOUllEAewlGiT5r5gEVBfCkmA380iFX575_vzvPN6Vgyr1zCgXJYk8_UHwH&_nc_ht=scontent-atl3-1.xx&oh=a7a07226b562bf4d6ee6ca4069ed5432&oe=5DC85AF1">
+              </div>
+              
+              <div class = "content">
+                  <header>Jeremy Marx</header>
+                  <p>Operation Spark Bootcamp Student</p>
+                  <section class = "interests">
+                      <header>Interests</header>
+                      <ul>
+                          <li>Music</li>
+                          <li>Current Events</li>
+                          <li>Football and Basketball</li>
+                          
+                      </ul>
+                  </section>
+              </div>
+            </main>
+        </div>
+    </body>
+</html>

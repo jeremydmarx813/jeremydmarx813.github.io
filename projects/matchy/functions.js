@@ -1,0 +1,82 @@
+/**
+ * Part 2
+ *
+ * In this file, we're going to create some
+ * Functions to work with our data created in
+ * data.js.
+ *
+ * See the README for detailed instructions,
+ * and read every instruction carefully.
+ */
+
+//////////////////////////////////////////////////////////////////////
+// Step 1 - Search ///////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+// var search = function(animals, name){
+//   for(let i = 0; i < animals.length; i++){
+//       if(animals[i].name === name){
+//           return animals[i];
+//       }
+//   }  
+//   return null;
+// };
+
+
+//////////////////////////////////////////////////////////////////////
+// Step 2 - Replace //////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// var replace = function(animals, name, replacement) {
+//   for(let i = 0; i< animals.length; i++){
+//       if(animals[i].name === name){
+//           animals[i] = replacement;
+//       }
+//   }
+//   console.log('no replacement found');
+// };
+
+
+//////////////////////////////////////////////////////////////////////
+// Step 3 - Remove ///////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// var remove = function(animals, name){
+//       for(let i = 0; i< animals.length; i++){
+//       if(animals[i].name === name){
+//          animals.splice(i, 1);
+//       }
+//   }
+//   console.log('name not found, unable to remove');
+// };
+
+//////////////////////////////////////////////////////////////////////
+// Step 4 - Create ///////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// var add = function(animals, animal) {
+// for(let i = 0; i < animals.length; i++){
+//     if(animals[i].name === animal.name){
+//         return null;
+//     }
+// }
+//   animals.push(animal);
+// };
+
+
+
+// add(animals, {name: 'oliver'});
+
+
+
+
+//////////////////////////////////////////////////////////////////////
+// DON'T REMOVE THIS CODE ////////////////////////////////////////////
+///////////////////TESTS!!!!/////////////////////////////////////
+// var search, replace, remove, add;
+// if((typeof process !== 'undefined') &&
+//   (typeof process.versions.node !== 'undefined')) {
+//     module.exports.search = search || null;
+//     module.exports.replace = replace || null;
+//     module.exports.remove = remove || null;
+//     module.exports.add = add || null;
+// }
