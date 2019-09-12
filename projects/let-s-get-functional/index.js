@@ -19,13 +19,33 @@ var _ = require('lowdown-jeremydmarx813');
  *    npm start --prefix ./jeremydmarx813.github.io/projects/let-s-get-functional/
  */
 
+///TEST FOR CODE ENVY!!!!
+
 var maleCount = function(array) {
-    console.log(_);
+    return _.filter(array, (e, i, c) => {
+        return e.gender === 'male';
+    }).length;
 };
 
-var femaleCount;
+var femaleCount = function(array) {
+    return _.reduce(array, (seed, e, i) => {
+        if(e.gender === 'female'){
+            seed++;
+        }
+        return seed;
+    }, 0);
+};
 
-var oldestCustomer;
+var oldestCustomer = function(array) {
+    return _.reduce(array, (seed, e, i) => {
+        if(e.age > seed.age){
+            console.log(seed.name);
+            seed = e;
+        }
+        console.log('final', seed.name);
+        return seed.name;
+    });
+};
 
 var youngestCustomer;
 
