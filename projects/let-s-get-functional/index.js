@@ -47,8 +47,8 @@ var oldestCustomer = function(array) {
             return e;
         }
         // return seed.name
-        return seed.name;
-    });
+        return seed;
+    }).name;
 };
 
 var youngestCustomer = function(array) {
@@ -61,11 +61,12 @@ var youngestCustomer = function(array) {
             return e;
         }
         // return seed.name
-        return seed.name;
-    });
+        return seed;
+    }).name;
 };
 
 var averageBalance = function(array) {
+    //BALANCES ARE STRINGS!!!
      //return the eval of calling reduce on input arr divided by arr length for avg
     //feed seed of 0 to specify number data type
     return _.reduce(array, (seed, e, i) => {
@@ -84,6 +85,7 @@ var firstLetterCount = function(array, letter) {
 };
 
 var friendFirstLetterCount = function(array, customer, letter) {
+    //make sure store data, cause each returns undefined
     _.each(array, (e, i, c) => {
         if(e.name === customer){
             return firstLetterCount(e.friends, letter);
