@@ -37,29 +37,132 @@ var femaleCount = function(array) {
 };
 
 var oldestCustomer = function(array) {
+    //return the eval of calling reduce on input arr
+    //no seed fed, to start on first e
     return _.reduce(array, (seed, e, i) => {
+        //if current e.age is > seed.age
         if(e.age > seed.age){
-            console.log(seed.name);
-            seed = e;
+            // return e to become new seed
+            return e;
         }
-        console.log('final', seed.name);
-        return seed.name;
+        // return seed.name
+        return seed;
+    }).name;
+};
+
+var youngestCustomer = function(array) {
+     //return the eval of calling reduce on input arr
+    //no seed fed, to start on first e
+    return _.reduce(array, (seed, e, i) => {
+        //if current e.age is < seed.age
+        if(e.age < seed.age){
+            // return e to become new seed
+            return e;
+        }
+        // return seed.name
+        return seed;
+    }).name;
+};
+
+var averageBalance = function(array) {
+    //BALANCES ARE STRINGS!!!
+     //return the eval of calling reduce on input arr divided by arr length for avg
+    //feed seed of 0 to specify number data type
+    return _.reduce(array, (seed, e, i) => {
+       // return seed + current obj.balance
+        return seed + e.balance;
+    }, 0) / array.length;
+};
+
+var firstLetterCount = function(array, letter) {
+    return _.reduce(array, (seed, e, i) => {
+        if(e.name[0].toLowerCase() === letter.toLowerCase()){
+            seed++;
+        }
+        return seed;
+    }, 0);
+};
+
+var friendFirstLetterCount = function(array, customer, letter) {
+    //make sure store data, cause each returns undefined
+    _.each(array, (e, i, c) => {
+        if(e.name === customer){
+            return firstLetterCount(e.friends, letter);
+        }
     });
 };
 
-var youngestCustomer;
+var friendsCount = function(array, name) {
+    //return reduce on input arr
+    //feed empty arr as seed
+    return _.reduce(array, (seed, e, i) => {
+   //each to itt over each ele friends
+        _.each(e.friends, (innerE, innerI, innerC) => {
+        //if inner name appears in itt, push outer name to
+            if(innerE.name === name){
+                seed.push(e.name);
+            }
+        });
+        return seed;
+    }, []);
+};
 
-var averageBalance;
+var topThreeTags = function(array) {
+    //create arr to be returned at end
+    let finArr = [];
+    //make obj of all tags and counts of how many times they appear 
+    //use reduce on input arr, plug in empt obj as seed
+    let testObj = _.reduce(array, (seed, e, i) => {
+        //ise each to itt over each object in input arr
+        _.each(e.tags, (innerE, innerI, innerC) => {
+            //if prop isnt set on seed, set it
+            //else bump by 1, return seed at end
+            if(!seed[innerE]) {
+                seed[innerE] = 1;
+            } else {
+                seed[innerE]++;
+            }
+        });
+        return seed;
+    }, {});
+    //test var to compare value in obj loop below
+    let testVar;
+    //loop thru testObj
+    for(let k in testObj){
+    //delete all tags that appear once
+     if(testObj[k] === 1){
+         delete testObj[k];
+    //if a test var has been set
+     }  else if(testVar){
+        //if the current val is greater than or equal to test Var, unshift and reset testVar
+          if(testObj[k] >= testVar){
+              finArr.unshift(k);
+              testVar = testObj[k];
+          }
+    //if on first itt, push to fin arr, set tetsVar
+      } else {
+          finArr.push(k);
+          testVar = testObj[k];
+      }    
+    }
+    //return first 3 indexes of finArr
+    return finArr.slice(0, 3);
+};
 
-var firstLetterCount;
-
-var friendFirstLetterCount;
-
-var friendsCount;
-
-var topThreeTags;
-
-var genderCount;
+var genderCount = function(array) {
+    //return reduce called on array, pass in empty obj as seed to be returned
+    return _.reduce(array, (seed, e, i) => {
+        //if the prop of current elements gender isnt set, set it
+        //if it is, bump up by one
+        if(!seed[e.gender]){
+            seed[e.gender] = 1;
+        } else {
+            seed[e.gender]++;
+        }
+        //return seed at end of each itt?
+        return seed;
+    }, {});
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
